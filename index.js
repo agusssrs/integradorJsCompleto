@@ -8,7 +8,7 @@ console.log(products)
      div.innerHTML = `
      <div class="azzaro">
              <img src="${producto.productImg}" alt="">
-             <h2>${producto.name} ${producto.ml} </h2>
+             <h2>${producto.brand + ' '+ producto.name} ${producto.ml} </h2>
              <p>$${producto.price}</p>
              <a  class="BuyBtn" id="${producto.id}">Comprar</a>
      </div>`
