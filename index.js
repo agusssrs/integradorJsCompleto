@@ -2,20 +2,116 @@ const perfumesCards = document.querySelector('.perfumes')
 const cartMenu = document.querySelector('cart')
 
 console.log(products)
- products.forEach((producto) => {
-    const div = document.createElement('div')
-     div.classList.add('producto')
-     div.innerHTML = `
-     <div class="azzaro">
-             <img src="${producto.productImg}" alt="">
-             <h2>${producto.brand + ' '+ producto.name} ${producto.ml} </h2>
-             <p>$${producto.price}</p>
-             <a  class="BuyBtn" id="${producto.id}">Comprar</a>
-     </div>`
-     perfumesCards.appendChild(div)
-     const btn = document.getElementById (`${producto.id}`)
-     btn.addEventListener('click', () =>addItemCart(producto.id))
- });
+//  products.forEach((producto) => {
+//     const div = document.createElement('div')
+//      div.classList.add('producto')
+//      div.innerHTML = `
+//      <div class="azzaro">
+//              <img src="${producto.productImg}" alt="">
+//              <h2>${producto.brand + ' '+ producto.name} ${producto.ml} </h2>
+//              <p>$${producto.price}</p>
+//              <a  class="BuyBtn" id="${producto.id}">Comprar</a>
+//      </div>`
+//      perfumesCards.appendChild(div)
+//      const btn = document.getElementById (`${producto.id}`)
+//      btn.addEventListener('click', () =>addItemCart(producto.id))
+//  });
+
+function showProducts (filterA) {
+    perfumesCards.innerHTML = '';
+    filterA.forEach((producto) => {
+      const div = document.createElement('div')
+       div.classList.add('producto')
+       div.innerHTML = `
+       <div class="azzaro">
+               <img src="${producto.productImg}" alt="">
+               <h2>${producto.brand+" "+producto.name} ${producto.ml} </h2>
+               <p>$${producto.price}</p>
+               <a  class="BuyBtn" id="${producto.id}">Comprar</a>
+       </div>`
+       perfumesCards.appendChild(div)
+       const btn = document.getElementById (`${producto.id}`)
+       btn.addEventListener('click', () =>addItemCart(producto.id))
+   });
+   }
+  
+  sortedProductsZA ();
+  
+  const filterA = document.querySelector("#filterA");
+  filterA.addEventListener("click", function () {
+    sortedProductsAZ();
+  });
+  
+  function sortedProductsAZ (){
+    const sortedProducts = products.sort(function (a,b){
+      if (a.brand < b.brand){
+        return -1;
+      }
+      if (a.brand > b.brand){
+        return 1;
+      }
+      return 0;
+    }
+    );
+    showProducts (sortedProducts);
+  }
+  
+  const filterZ = document.querySelector("#filterZ");
+  filterZ.addEventListener("click", function () {
+    sortedProductsZA();
+  });
+  
+  function sortedProductsZA (){
+    const sortedProducts = products.sort(function (a,b){
+      if (a.brand > b.brand){
+        return -1;
+      }
+      if (a.brand < b.brand){
+        return 1;
+      }
+      return 0;
+    }
+    );
+    showProducts (sortedProducts);
+  }
+  
+  const filterP = document.querySelector("#filterP");
+  filterP.addEventListener("click", function () {
+    sortedProductsP();
+  });
+  
+  function sortedProductsP (){
+    const sortedProducts = products.sort(function (a,b){
+      if (a.price > b.price){
+        return -1;
+      }
+      if (a.price < b.price){
+        return 1;
+      }
+      return 0;
+    }
+    );
+    showProducts (sortedProducts);
+  }
+  
+  const filterPMinus = document.querySelector("#filterPMinus");
+  filterPMinus.addEventListener("click", function () {
+    sortedProductsPMinus();
+  });
+  
+  function sortedProductsPMinus (){
+    const sortedProducts = products.sort(function (a,b){
+      if (a.price < b.price){
+        return -1;
+      }
+      if (a.price > b.price){
+        return 1;
+      }
+      return 0;
+    }
+    );
+    showProducts (sortedProducts);
+  }
 
  let cart = [
 

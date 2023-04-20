@@ -131,6 +131,7 @@ body::-webkit-scrollbar{
     border-radius: 0.5rem;
     padding: 5px;
     width: 320px;
+    
 }
 
 .cart-item h2{
@@ -141,6 +142,7 @@ body::-webkit-scrollbar{
 .cart-item h3{
     font-size: 15px;
     font-weight: 500;
+    
 }
 
 .cart-item img{
@@ -299,6 +301,69 @@ main{
     align-items: center;
     gap: 40px;
     width: 100vw;
+}
+
+.sortBy{
+    display: flex;
+    gap: 10px;
+}
+
+#filterA{
+    text-align: center;
+    padding: 2px;
+    width: 65px;
+    padding: 4px;
+    padding-bottom: 5px;
+    height: 30px;
+    border: 3px solid aqua;
+    border-radius: 0.5rem;
+    background: #16222A;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#filterZ{
+    text-align: center;
+    padding: 2px;
+    width: 65px;
+    padding: 4px;
+    padding-bottom: 5px;
+    height: 30px;
+    border: 3px solid aqua;
+    border-radius: 0.5rem;
+    background: #16222A;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#filterP{
+    text-align: center;
+    padding:4px;
+    padding-bottom: 20px;
+    width: 195px;
+    height: 25px;
+    border: 3px solid aqua;
+    border-radius: 0.5rem;
+    background: #16222A;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#filterPMinus{
+    text-align: center;
+    padding:4px;
+    padding-bottom: 20px;
+    width: 195px;
+    height: 25px;
+    border: 3px solid aqua;
+    border-radius: 0.5rem;
+    background: #16222A;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .perfumes{

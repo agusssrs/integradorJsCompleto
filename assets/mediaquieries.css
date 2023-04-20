@@ -35,21 +35,34 @@
     overflow-y: scroll;
     display: none;
     max-height: 500px;
-    /* max-height: 700px; */
+    
+    
 }
 
 .cart-item{
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: unset;
     gap: 10px;
     border: 3px solid aquamarine;
     border-radius: 0.5rem;
     padding: 5px;
-    width: 320px;
+    width: 380px;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
     /* width: fit-content; */
     
+}
+
+.item-info{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+    text-align: start;
+    padding-right: 150px;
 }
 
 .cart-item h2{
@@ -65,6 +78,8 @@
 .cart-item img{
     width: 75px;
 }
+
+
 
 }
 
@@ -718,6 +733,46 @@
     }
 }
 
+@media (max-width:594px){
+    .navbar-list{
+        position: absolute;
+        top: 65px;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        flex-direction: column;
+        background: #16222A;
+        background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);
+        background: linear-gradient(to bottom, #3A6073, #16222A);
+        border: 3px solid aqua;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        text-align: center;
+        border-top: 0px;
+        gap: 15px;
+        z-index: 2;
+        padding: 45px 30px ;
+        display: none;
+    }
+
+    .menu-label{
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: flex-end;
+        top: 0;
+    }
+
+    .menu-icon{
+        margin: 0;
+        width: 40px;
+    }
+
+    #menu-toggle:checked + .navbar-list{
+        display: flex;
+    }
+}
+
 @media (max-width:581px){
     *{
         margin: 0;
@@ -770,6 +825,10 @@
 
     #menu-toggle:checked + .navbar-list{
         display: flex;
+    }
+
+    .sortBy{
+        gap: 5px;
     }
 
     /* .open-menu{
@@ -829,6 +888,17 @@
 
         #menu-toggle:checked + .navbar-list{
             display: flex;
+        }
+
+        .sortBy{
+            display: grid;
+            grid-template-columns: 200px 200px;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #filterA,#filterZ{
+            width: 195px;
         }
 
         .perfumes{
@@ -1228,6 +1298,17 @@
         #menu-toggle:checked + .navbar-list{
             display: flex;
         }
+
+        .sortBy{
+            grid-template-columns: 150px 150px;
+            gap: 10px;
+        }
+        
+        #filterA,#filterZ,#filterP,#filterPMinus{
+            font-size: 13px;
+            width: 150px;
+        }
+        
 
         #hero{
             display: flex;
@@ -1767,6 +1848,15 @@
             display: flex;
         }
 
+        .sortBy{
+            grid-template-columns: 120px 120px;
+        }
+
+        #filterA,#filterZ,#filterP,#filterPMinus{
+            font-size: 10px;
+            width: 120px;
+        }
+
         #products{
             width: 300px;
         }
@@ -1917,7 +2007,7 @@
     }
 
 
-    @media (max-width:320px){
+    @media (max-width:310px){
         *{
             margin: 0;
             padding: 0;
